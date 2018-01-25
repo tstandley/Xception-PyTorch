@@ -19,10 +19,15 @@ The resize parameter of the validation transform should be 333, and make sure to
 import math
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.utils.model_zoo as model_zoo
 from torch.nn import init
 import torch
 
 __all__ = ['xception']
+
+model_urls = {
+    'xception':'https://www.dropbox.com/s/7tk94lexs1jyd63/xception-5a75839e.pth.tar?dl=1'
+}
 
 
 class SeparableConv2d(nn.Module):
@@ -200,5 +205,5 @@ def xception(pretrained=False,**kwargs):
 
     model = Xception(**kwargs)
     if pretrained:
-        model.load_state_dict(torch.load('xception.pth.tar')['state_dict'])
+        model.load_state_dict(model_zoo.load_url(model_urls['xception'])['state_dict'])
     return model
