@@ -26,7 +26,7 @@ import torch
 __all__ = ['xception']
 
 model_urls = {
-    'xception':'https://www.dropbox.com/s/7tk94lexs1jyd63/xception-5a75839e.pth.tar?dl=1'
+    'xception':'https://www.dropbox.com/s/1hplpzet9d7dv29/xception-c0a72b38.pth.tar?dl=1'
 }
 
 
@@ -205,5 +205,5 @@ def xception(pretrained=False,**kwargs):
 
     model = Xception(**kwargs)
     if pretrained:
-        model.load_state_dict(model_zoo.load_url(model_urls['xception'])['state_dict'])
+        model.load_state_dict(model_zoo.load_url(model_urls['xception']))
     return model
