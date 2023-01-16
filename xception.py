@@ -26,7 +26,8 @@ import torch
 __all__ = ['xception']
 
 model_urls = {
-    'xception':'https://www.dropbox.com/s/1hplpzet9d7dv29/xception-c0a72b38.pth.tar?dl=1'
+#     'xception':'https://www.dropbox.com/s/1hplpzet9d7dv29/xception-c0a72b38.pth.tar?dl=1'
+    'xception':'http://data.lip6.fr/cadene/pretrainedmodels/xception-43020ad28.pth'
 }
 
 
